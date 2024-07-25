@@ -11,7 +11,7 @@ interface Props {
   items: Item[];
   defaultItems: Item[];
   limit?: number;
-  searchInputPlacejolder?: string;
+  searchInputPlaceholder?: string;
   onChange?: (values: string[]) => void;
   defaultValue?: string[];
   className?: string;
@@ -22,14 +22,23 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
   items,
   defaultItems,
   limit = 5,
-  searchInputPlacejolder = "Поиск...",
+  searchInputPlaceholder = "Поиск...",
   onChange,
   defaultValue,
   className,
 }) => {
   const [showAll, setShowAll] = React.useState(false);
+  const [searchValue, setSearchValue] = React.useState("");
 
-  const list = showAll ? items : defaultItems?.slice(0, limit);
+  const onChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
+
+  const list = showAll
+    ? items.filter((item) =>
+        item.text.toLowerCase().includes(searchValue.toLocaleLowerCase())
+      )
+    : (defaultItems || items).slice(0, limit);
 
   return (
     <div className={className}>
@@ -37,7 +46,8 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
       {showAll && (
         <div className="mb-5">
           <Input
-            placeholder={searchInputPlacejolder}
+            onChange={onChangeSearchInput}
+            placeholder={searchInputPlaceholder}
             className="bg-gray-50 border-none"
           />
         </div>
