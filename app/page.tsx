@@ -31,7 +31,7 @@ export default function Home() {
                     items: [{ price: 200 }],
                   },
                   {
-                    id: 1,
+                    id: 2,
                     name: "Чизбергер-пицца",
                     imageUrl:
                       "https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif",
@@ -39,7 +39,7 @@ export default function Home() {
                     items: [{ price: 200 }],
                   },
                   {
-                    id: 1,
+                    id: 3,
                     name: "Чизбергер-пицца",
                     imageUrl:
                       "https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif",
@@ -47,7 +47,7 @@ export default function Home() {
                     items: [{ price: 200 }],
                   },
                   {
-                    id: 1,
+                    id: 4,
                     name: "Чизбергер-пицца",
                     imageUrl:
                       "https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif",
@@ -55,7 +55,7 @@ export default function Home() {
                     items: [{ price: 200 }],
                   },
                   {
-                    id: 1,
+                    id: 5,
                     name: "Чизбергер-пицца",
                     imageUrl:
                       "https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif",
@@ -63,7 +63,7 @@ export default function Home() {
                     items: [{ price: 200 }],
                   },
                   {
-                    id: 1,
+                    id: 6,
                     name: "Чизбергер-пицца",
                     imageUrl:
                       "https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif",
@@ -74,7 +74,7 @@ export default function Home() {
                 categoryId={1}
               />
               <ProductGroupList
-                title="Закуски"
+                title="Комбо"
                 items={[
                   {
                     id: 1,
@@ -85,7 +85,7 @@ export default function Home() {
                     items: [{ price: 200 }],
                   },
                   {
-                    id: 1,
+                    id: 2,
                     name: "Чизбергер-пицца",
                     imageUrl:
                       "https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.avif",
@@ -93,7 +93,7 @@ export default function Home() {
                     items: [{ price: 200 }],
                   },
                   {
-                    id: 1,
+                    id: 3,
                     name: "Чизбергер-пицца",
                     imageUrl:
                       "https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.avif",
@@ -101,7 +101,7 @@ export default function Home() {
                     items: [{ price: 200 }],
                   },
                   {
-                    id: 1,
+                    id: 4,
                     name: "Чизбергер-пицца",
                     imageUrl:
                       "https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.avif",
@@ -109,7 +109,7 @@ export default function Home() {
                     items: [{ price: 200 }],
                   },
                   {
-                    id: 1,
+                    id: 5,
                     name: "Чизбергер-пицца",
                     imageUrl:
                       "https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.avif",
@@ -117,7 +117,7 @@ export default function Home() {
                     items: [{ price: 200 }],
                   },
                   {
-                    id: 1,
+                    id: 6,
                     name: "Чизбергер-пицца",
                     imageUrl:
                       "https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.avif",
@@ -125,7 +125,7 @@ export default function Home() {
                     items: [{ price: 200 }],
                   },
                 ]}
-                categoryId={1}
+                categoryId={2}
               />
             </div>
           </div>
