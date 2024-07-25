@@ -1,4 +1,5 @@
 import { Container, Filters, Title, TopBar } from "@/components/shared";
+import { ProductGroupList } from "@/components/shared/products-group-list";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       <TopBar />
 
       <Container className="pb-14 mt-10">
-        <div className="flex gap[60px]">
+        <div className="flex gap-[80px]">
           {/*Фильтрация*/}
           <div className="w-[250px]">
             <Filters />
@@ -17,7 +18,116 @@ export default function Home() {
 
           {/*Список товаров*/}
           <div className="flex-1">
-            <div className="flex flex-col gap-16">Список товаров</div>
+            <div className="flex flex-col gap-16">
+              <ProductGroupList
+                title="Пиццы"
+                items={[
+                  {
+                    id: 1,
+                    name: "Чизбергер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                    price: 200,
+                    items: [{ price: 200 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Чизбергер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                    price: 200,
+                    items: [{ price: 200 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Чизбергер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                    price: 200,
+                    items: [{ price: 200 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Чизбергер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                    price: 200,
+                    items: [{ price: 200 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Чизбергер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                    price: 200,
+                    items: [{ price: 200 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Чизбергер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE7D61698827EE9B8DB6D0AEC53410.avif",
+                    price: 200,
+                    items: [{ price: 200 }],
+                  },
+                ]}
+                categoryId={1}
+              />
+              <ProductGroupList
+                title="Закуски"
+                items={[
+                  {
+                    id: 1,
+                    name: "Чизбергер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.avif",
+                    price: 200,
+                    items: [{ price: 200 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Чизбергер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.avif",
+                    price: 200,
+                    items: [{ price: 200 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Чизбергер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.avif",
+                    price: 200,
+                    items: [{ price: 200 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Чизбергер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.avif",
+                    price: 200,
+                    items: [{ price: 200 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Чизбергер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.avif",
+                    price: 200,
+                    items: [{ price: 200 }],
+                  },
+                  {
+                    id: 1,
+                    name: "Чизбергер-пицца",
+                    imageUrl:
+                      "https://media.dodostatic.net/image/r:292x292/11EE796FF0059B799A17F57A9E64C725.avif",
+                    price: 200,
+                    items: [{ price: 200 }],
+                  },
+                ]}
+                categoryId={1}
+              />
+            </div>
           </div>
         </div>
       </Container>
