@@ -35,7 +35,7 @@ model Category {
 
     createrAt DateTime @default(now())
     updateAt DateTime @updatedAt
-    }
+}
 
 model Product {
     id Int @id @default(autoincrement())
@@ -81,17 +81,6 @@ model Ingredient {
     updateAt DateTime @updatedAt
 }
 
-model VerificationCode {
-    id Int @id @default(autoincrement())
-
-    user User @relation(fields: [userId], references: [id])
-    userId Int @unique
-
-    code String
-
-    createrAt DateTime @default(now())
-}
-
 model Cart {
     id Int @id @default(autoincrement())
 
@@ -106,7 +95,7 @@ model Cart {
 
     createrAt DateTime @default(now())
     updateAt DateTime @updatedAt
-    }
+}
 
 model CartItem {
     id Int @id @default(autoincrement())
@@ -123,8 +112,7 @@ model CartItem {
 
     createrAt DateTime @default(now())
     updateAt DateTime @updatedAt
-    }
-
+}
 
 model Order {
     id Int @id @default(autoincrement())
@@ -148,8 +136,20 @@ model Order {
 
     createrAt DateTime @default(now())
     updateAt DateTime @updatedAt
-    }
+}
 
+model VerificationCode {
+    id Int @id @default(autoincrement())
+
+    user User @relation(fields: [userId], references: [id])
+    userId Int @unique
+
+    code String @unique
+
+    createrAt DateTime @default(now())
+
+    @@unique([userId, code])
+}
 
 enum OrderStatus {
     PENDING
