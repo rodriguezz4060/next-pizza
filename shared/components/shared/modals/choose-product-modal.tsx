@@ -28,7 +28,7 @@ export const ChooseProductModal: React.FC<Props> = ({ product, className }) => {
         className={cn('p-0 w-[1060px] max-w-[1060px] min-h-[510px] bg-white overflow-hidden')}
         aria-describedby={undefined}
       >
-        <DialogTitle />
+        <DialogTitle className='hidden' />
         {isPizzaForm ? (
           <ChoosePizzaForm
             imageUrl={product.imageUrl}
