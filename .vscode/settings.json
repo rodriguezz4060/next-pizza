@@ -1,6 +1,7 @@
 {
-    "codeium.enableConfig": {
-        "*": true
-    },
-    "codeium.aggressiveShutdown": false
+  "codeium.enableConfig": {
+    "*": true
+  },
+  "codeium.aggressiveShutdown": false,
+  "cSpell.words": ["zustand"]
 }

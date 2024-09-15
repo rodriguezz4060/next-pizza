@@ -3,147 +3,146 @@ generator client {
 }
 
 datasource db {
-    provider = "postgresql"
-    url = env("POSTGRES_URL")
-    directUrl = env("POSTGRES_URL_NON_POOLING") 
+    provider  = "postgresql"
+    url       = env("POSTGRES_URL")
+    directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
 model User {
     id Int @id @default(autoincrement())
 
     fullName String
-    email String @unique
+    email    String   @unique
     password String
-    role UserRole @default(USER)
+    role     UserRole @default(USER)
     verified DateTime
-    
-    provider String?
+
+    provider   String?
     providerId String?
 
-    cart Cart?
-    order Order[]
+    cart             Cart?
+    order            Order[]
     verificationCode VerificationCode?
 
     createrAt DateTime @default(now())
-    updateAt DateTime @updatedAt
+    updateAt  DateTime @updatedAt
 }
 
 model Category {
     id Int @id @default(autoincrement())
 
-    name String @unique
-    products Product[] 
+    name     String    @unique
+    products Product[]
 
     createrAt DateTime @default(now())
-    updateAt DateTime @updatedAt
+    updateAt  DateTime @updatedAt
 }
 
 model Product {
     id Int @id @default(autoincrement())
 
-    name String
+    name     String
     imageUrl String
 
     ingredients Ingredient[]
-    items ProductItem[]
+    items       ProductItem[]
 
-    category Category @relation(fields: [categoryId], references: [id])
+    category   Category @relation(fields: [categoryId], references: [id])
     categoryId Int
 
     createrAt DateTime @default(now())
-    updateAt DateTime @updatedAt
+    updateAt  DateTime @updatedAt
 }
 
 model ProductItem {
     id Int @id @default(autoincrement())
 
-    price Int
-    size Int?
+    price     Int
+    size      Int?
     pizzaType Int?
 
     cartItems CartItem[]
 
-    product Product @relation(fields: [productId], references: [id])
+    product   Product @relation(fields: [productId], references: [id])
     productId Int
-    
 }
 
 model Ingredient {
     id Int @id @default(autoincrement())
 
-    name String
-    price Int
+    name     String
+    price    Int
     imageUrl String
 
-    products Product[]
+    products  Product[]
     cartItems CartItem[]
 
     createrAt DateTime @default(now())
-    updateAt DateTime @updatedAt
+    updateAt  DateTime @updatedAt
 }
 
 model Cart {
     id Int @id @default(autoincrement())
 
-    user User? @relation(fields: [userId], references: [id])
-    userId Int? @unique
+    user   User? @relation(fields: [userId], references: [id])
+    userId Int?  @unique
 
     items CartItem[]
-    
+
     token String
 
     totalAmount Int @default(0)
 
     createrAt DateTime @default(now())
-    updateAt DateTime @updatedAt
+    updateAt  DateTime @updatedAt
 }
 
 model CartItem {
     id Int @id @default(autoincrement())
 
-    cart Cart @relation(fields: [cartId], references: [id])
+    cart   Cart @relation(fields: [cartId], references: [id])
     cartId Int
-        
-    productItem ProductItem @relation(fields: [productItemId], references: [id])
+
+    productItem   ProductItem @relation(fields: [productItemId], references: [id])
     productItemId Int
-        
-    quantity Int
+
+    quantity Int @default(1)
 
     ingredients Ingredient[]
 
     createrAt DateTime @default(now())
-    updateAt DateTime @updatedAt
+    updateAt  DateTime @updatedAt
 }
 
 model Order {
     id Int @id @default(autoincrement())
-    
-    user User? @relation(fields: [userId], references: [id])
+
+    user   User? @relation(fields: [userId], references: [id])
     userId Int?
 
     token String
 
     totalAmount Int
-    status OrderStatus
-    paymentId String?
+    status      OrderStatus
+    paymentId   String?
 
     items Json
 
     fullName String
-    email String
-    address String
-    phone String
-    comment String?
+    email    String
+    address  String
+    phone    String
+    comment  String?
 
     createrAt DateTime @default(now())
-    updateAt DateTime @updatedAt
+    updateAt  DateTime @updatedAt
 }
 
 model VerificationCode {
     id Int @id @default(autoincrement())
 
-    user User @relation(fields: [userId], references: [id])
-    userId Int @unique
+    user   User @relation(fields: [userId], references: [id])
+    userId Int  @unique
 
     code String @unique
 
